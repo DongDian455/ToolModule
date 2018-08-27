@@ -1,13 +1,23 @@
 package com.dongdian.jj.toolmodule;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+
+import android.Manifest;
+import android.content.Intent;
+
+import com.tools.jj.tools.activity.permission.BasePermissionActivity;
+
+public class MainActivity extends BasePermissionActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public String[] setRequestString() {
+        return new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE};
+    }
+
+    @Override
+    public void initActivity() {
+
     }
 }
