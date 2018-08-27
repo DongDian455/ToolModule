@@ -82,6 +82,7 @@ public class GlideLoader implements IImageLoader {
             requestOptions.placeholder(options.placeholderResId);
         }
         if (options.imageAngle > 0) {
+
           //  requestOptions.transform(new GlideRoundTransform(MyApplication.mContext, options.imageAngle));
         }
         //缓存
