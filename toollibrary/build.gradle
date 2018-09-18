@@ -41,7 +41,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation librarys.supportAppcompat
-    implementation librarys.recyclerview
     implementation librarys.cardview
     testCompile librarys.junit
     androidTestImplementation librarys.runner
@@ -64,5 +63,8 @@ dependencies {
     //友盟
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.umeng.sdk:common:latest.integration'
+
+
+
 
 }

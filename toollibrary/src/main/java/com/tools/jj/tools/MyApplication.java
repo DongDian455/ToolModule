@@ -6,7 +6,6 @@ import android.content.Context;
 
 import com.tools.jj.tools.http.Http;
 import com.tools.jj.tools.imageload.ImageLoader;
-import com.tools.jj.tools.utils.LogUtil;
 
 /**
  * Created by jj on 2018/3/28.

@@ -130,7 +130,7 @@ public class PermissionsActivity extends AppCompatActivity {
 
     // 显示缺失权限提示
     private void showMissingPermissionDialog() {
-    //    LogUtil.d("显示缺失权限提示");
+
 //        new AlertDialog(this).builder()
 //                .setTitle("帮助")
 //                .setMsg(getString(R.string.string_help_text))
