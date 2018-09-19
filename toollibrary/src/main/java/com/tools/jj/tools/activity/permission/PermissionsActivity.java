@@ -1,6 +1,8 @@
 package com.tools.jj.tools.activity.permission;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -23,6 +25,7 @@ import com.tools.jj.tools.R;
  * @version 1.0
  *          1.1 update by zmingchun on 2016/2/17
  *          1.2 update by jiajun he on 2018/1/23
+ *          1.3 update by jiajun he on 2018/09/19 修改弹窗的创建
  */
 public class PermissionsActivity extends AppCompatActivity {
 
@@ -130,22 +133,23 @@ public class PermissionsActivity extends AppCompatActivity {
 
     // 显示缺失权限提示
     private void showMissingPermissionDialog() {
-
-//        new AlertDialog(this).builder()
-//                .setTitle("帮助")
-//                .setMsg(getString(R.string.string_help_text))
-//                .setPositiveButton("设置", new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        startAppSettings();
-//                    }
-//                }).setNegativeButton("退出", new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                setResult(PERMISSIONS_DENIED);
-//                finish();
-//            }
-//        }).show();
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();//创建对话框
+        alertDialog.setTitle(getString(R.string.tip));
+        alertDialog.setMessage(getString(R.string.permission_dialog_fail));
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                setResult(PERMISSIONS_DENIED);
+                finish();
+            }
+        });
+        alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL,getString(R.string.set), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startAppSettings();
+            }
+        });
+        alertDialog.show();
     }
 
     // 启动应用的设置

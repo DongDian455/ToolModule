@@ -30,8 +30,6 @@ public class MyApplication extends Application {
         //图片框架初始化
         ImageLoader.getInstance().setImageLoader(new GlideLoader());
 
-        //开启debug
-        LogUtil.OPEN_LOG=true;
         //友盟
         //UMConfigure.init(this, "5a94ca46f43e481d9700015d", "Umeng", UMConfigure.DEVICE_TYPE_PHONE, null);
         ImageLoader.getInstance().setImageLoader(new GlideLoader());
