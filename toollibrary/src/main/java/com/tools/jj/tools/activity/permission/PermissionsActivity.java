@@ -136,14 +136,14 @@ public class PermissionsActivity extends AppCompatActivity {
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();//创建对话框
         alertDialog.setTitle(getString(R.string.tip));
         alertDialog.setMessage(getString(R.string.permission_dialog_fail));
-        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,getString(R.string.cancel), new DialogInterface.OnClickListener() {
+        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,getString(R.string.cancel), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 setResult(PERMISSIONS_DENIED);
                 finish();
             }
         });
-        alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL,getString(R.string.set), new DialogInterface.OnClickListener() {
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,getString(R.string.set), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 startAppSettings();
