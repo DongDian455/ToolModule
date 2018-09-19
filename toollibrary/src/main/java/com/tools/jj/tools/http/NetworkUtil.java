@@ -22,8 +22,12 @@ public class NetworkUtil {
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager connectivityManager =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isConnected();
+        if(connectivityManager!=null){
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            return networkInfo != null && networkInfo.isConnected();
+        }
+
+        return false;
     }
 
     /**
@@ -34,7 +38,11 @@ public class NetworkUtil {
     public static boolean isWifiConnected(Context context) {
         ConnectivityManager connectivityManager =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo mWifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        return mWifi != null && mWifi.isConnected();
+        if(connectivityManager!=null){
+            NetworkInfo mWifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            return mWifi != null && mWifi.isConnected();
+        }
+
+        return false;
     }
 }
