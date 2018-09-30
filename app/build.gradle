@@ -27,7 +27,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation librarys.supportAppcompat
-    implementation librarys.recyclerview
     testCompile librarys.junit
     androidTestImplementation librarys.runner
     androidTestImplementation librarys.espresso

@@ -57,14 +57,17 @@ dependencies {
     //阿里的vlayout
     api('com.alibaba.android:vlayout:1.0.4@aar') {
         transitive = true
+        exclude group: 'com.android.support'
     }
     //lottie动画
-    api 'com.airbnb.android:lottie:2.5.0-beta3'
+    api('com.airbnb.android:lottie:2.5.0-beta3') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
     //友盟
     api 'com.umeng.analytics:analytics:latest.integration'
     api 'com.umeng.sdk:common:latest.integration'
-
-
+    api librarys.recyclerview
+    api librarys.suppoutDesign
 
 
 }
